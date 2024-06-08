@@ -7,7 +7,7 @@ export default function DataFetchingComponent() {
     const [error, setError] = useState(null)
 
     useEffect(() => {
-        fetch("https://pokeapi.co/api/v2/ability/7/")
+        fetch("https://pokeapi.co/api/v2/pokemon/?limit=100")
         .then(response => {
             if(!response.ok) {
                 throw new Error('Network response was not ok')
@@ -35,7 +35,7 @@ export default function DataFetchingComponent() {
     return (
         <div>
             <h2>Fetched Data:</h2>
-            <pre>{JSON.stringify(data, null, 2)}</pre>
+            
         </div>
     )
 }
