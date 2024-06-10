@@ -30,6 +30,12 @@ h1 {
   font-size: 3.2em;
   line-height: 1.1;
   font-family:  cursive;
+  color: #646cff;
+}
+
+h3 {
+  font-family:  cursive;
+  color: #7f900e;
 }
 
 button {
@@ -66,5 +72,5 @@ button:focus-visible {
 }
 
 p {
-  font-family: Luminari, fantasy
+  font-family: Luminari, fantasy;
 }

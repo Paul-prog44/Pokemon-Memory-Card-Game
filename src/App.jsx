@@ -11,10 +11,10 @@ const [selectedPokemons, setSelectedPokemons] = useState([])
   return (
     <>
       <h1>Memory card game - Pokemon</h1>
-      <p>Get points by selecting an image on which you have never clicked before, if you pick the same image twice, you loose !</p>
+      <h3>Get points by selecting an image on which you have never clicked before, if you pick the same image twice, you loose !</h3>
       <div className="scoreBoard">
-        <p>Score: {score}</p>
-        <p>Best score: {bestScore}</p>
+        <h3>Score: {score}</h3>
+        <h3>Best score: {bestScore}</h3>
       </div>
       <DataFetchingComponent 
         setScore={setScore} 
