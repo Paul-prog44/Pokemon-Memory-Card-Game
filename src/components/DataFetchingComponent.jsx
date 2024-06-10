@@ -8,7 +8,6 @@ export default function DataFetchingComponent() {
 
     function fetchDataForEachPokemon(pokemon) {
         let url = pokemon.url
-        if (fetchedUrls.has(url)) return
 
         fetch(url)
             .then(response => {
@@ -28,10 +27,13 @@ export default function DataFetchingComponent() {
             if(!response.ok) {
                 throw new Error('Network response was not ok')
             }
+            console.log(response)
             return response.json()
         })
-        .then(allPokemons => {
-            allPokemons.results.forEach(pokemon => {
+        .then(reponse => {
+            
+            reponse.results.forEach(pokemon => {
+                // console.log(pokemon)
                fetchDataForEachPokemon(pokemon)
             });
             setLoading(false)
