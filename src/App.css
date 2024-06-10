@@ -3,4 +3,34 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  background: linear-gradient(to right, #5fffe7, #7bbffe);
+}
+
+.card {
+  background-color: aqua;
+  display: flex;
+  margin:auto;
+  margin-top: 10px;
+  width: 200px;
+  flex-direction: column;
+  border: solid, 1px;
+  border-radius: 5%;
+}
+
+.cardDisplay{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+img{
+  border: solid, 1px;
+  margin: 10px;
+  background: radial-gradient(circle, #639a75, #ffffff);
+}
+
+.scoreBoard{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-right: 50px;
 }

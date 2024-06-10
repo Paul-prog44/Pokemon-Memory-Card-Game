@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react"
+import PokemonCard from "./PokemonCard"
 
 
-export default function DataFetchingComponent() {
+export default function DataFetchingComponent({setScore, score, setSelectedPokemons, selectedPokemons}) {
     const [pokemons, setPokemons] = useState([])
     const [loading, setLoading] = useState(true)
     const [error, setError] = useState(null)
@@ -22,12 +23,11 @@ export default function DataFetchingComponent() {
     }
 
     useEffect(() => {
-        fetch("https://pokeapi.co/api/v2/pokemon/?limit=10")
+        fetch("https://pokeapi.co/api/v2/pokemon?limit=20")
         .then(response => {
             if(!response.ok) {
                 throw new Error('Network response was not ok')
             }
-            console.log(response)
             return response.json()
         })
         .then(reponse => {
@@ -54,10 +54,17 @@ export default function DataFetchingComponent() {
     }
     
     return (
-        <div>
-            <h2>Fetched Data:</h2>
+        <div className="cardDisplay">
             {pokemons.map(pokemon => (
-                <li key={pokemon.name}>{pokemon.name}</li>
+                <PokemonCard 
+                    key={pokemon.name} 
+                    imgSrc={pokemon.sprites.front_default} 
+                    pokemonName={pokemon.name} 
+                    setScore={setScore} 
+                    score={score}
+                    setSelectedPokemons={setSelectedPokemons}
+                    selectedPokemons={selectedPokemons}
+                />
             ))}
         </div>
     )
