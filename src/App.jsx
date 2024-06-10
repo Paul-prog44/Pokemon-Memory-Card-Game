@@ -16,7 +16,14 @@ const [selectedPokemons, setSelectedPokemons] = useState([])
         <p>Score: {score}</p>
         <p>Best score: {bestScore}</p>
       </div>
-      <DataFetchingComponent setScore={setScore} score={score} selectedPokemons={selectedPokemons} setSelectedPokemons={setSelectedPokemons}/>
+      <DataFetchingComponent 
+        setScore={setScore} 
+        score={score} 
+        selectedPokemons={selectedPokemons} 
+        setSelectedPokemons={setSelectedPokemons}
+        setBestScore={setBestScore}
+        bestScore={bestScore}
+      />
     </>
   )
 }

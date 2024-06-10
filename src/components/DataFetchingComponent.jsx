@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import PokemonCard from "./PokemonCard"
 
 
-export default function DataFetchingComponent({setScore, score, setSelectedPokemons, selectedPokemons}) {
+export default function DataFetchingComponent({setScore, score, setSelectedPokemons, selectedPokemons, setBestScore, bestScore}) {
     const [pokemons, setPokemons] = useState([])
     const [loading, setLoading] = useState(true)
     const [error, setError] = useState(null)
@@ -64,6 +64,8 @@ export default function DataFetchingComponent({setScore, score, setSelectedPokem
                     score={score}
                     setSelectedPokemons={setSelectedPokemons}
                     selectedPokemons={selectedPokemons}
+                    bestScore={bestScore}
+                    setBestScore={setBestScore}
                 />
             ))}
         </div>
