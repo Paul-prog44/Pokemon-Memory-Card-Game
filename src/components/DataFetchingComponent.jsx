@@ -22,8 +22,12 @@ export default function DataFetchingComponent({setScore, score, setSelectedPokem
         })
     }
 
+    function shuffleArray() {
+        pokemons.sort((a, b) => 0.5 -Math.random())
+    }
+
     useEffect(() => {
-        fetch("https://pokeapi.co/api/v2/pokemon?limit=20")
+        fetch("https://pokeapi.co/api/v2/pokemon?limit=15")
         .then(response => {
             if(!response.ok) {
                 throw new Error('Network response was not ok')
@@ -66,6 +70,7 @@ export default function DataFetchingComponent({setScore, score, setSelectedPokem
                     selectedPokemons={selectedPokemons}
                     bestScore={bestScore}
                     setBestScore={setBestScore}
+                    shuffleArray={shuffleArray}
                 />
             ))}
         </div>

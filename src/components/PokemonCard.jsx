@@ -1,4 +1,4 @@
-export default function PokemonCard({imgSrc, pokemonName, setScore, score, selectedPokemons, setSelectedPokemons, bestScore, setBestScore}) {
+export default function PokemonCard({imgSrc, pokemonName, setScore, score, selectedPokemons, setSelectedPokemons, bestScore, setBestScore, shuffleArray}) {
 
     function compareBestScore() {
         if (score>bestScore) {
@@ -16,6 +16,7 @@ export default function PokemonCard({imgSrc, pokemonName, setScore, score, selec
         } else {
             setSelectedPokemons(prevData => [...prevData, pokemonName])
             setScore(score + 1)
+            shuffleArray()
         }
         
     }

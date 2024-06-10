@@ -1,5 +1,5 @@
 #root {
-  max-width: 1280px;
+  /* max-width: 1280px; */
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
@@ -9,8 +9,7 @@
 .card {
   background-color: aqua;
   display: flex;
-  margin:auto;
-  margin-top: 10px;
+  margin:20px;
   width: 200px;
   flex-direction: column;
   border: solid, 1px;
@@ -20,6 +19,7 @@
 .cardDisplay{
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-evenly;
 }
 
 img{
