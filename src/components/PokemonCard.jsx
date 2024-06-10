@@ -3,12 +3,16 @@ export default function PokemonCard({imgSrc, pokemonName, setScore, score, selec
     //Vérification de la présence du pokemon dans la liste déja selectionnée
     const onClick = () => {
         if (selectedPokemons.includes(pokemonName)) {
-                console.log("Vous avez perdu")
-            }
+            setSelectedPokemons([])
+            setScore(0)
+            alert("Vous avez perdu")
+                
+        } else {
+            setSelectedPokemons(prevData => [...prevData, pokemonName])
+            setScore(score + 1)
+            console.log("clicked")
+        }
         
-        setSelectedPokemons(prevData => [...prevData, pokemonName])
-        setScore(score + 1)
-        console.log("clicked")
     }
 
     return (
